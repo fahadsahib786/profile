@@ -1,34 +1,24 @@
 {
-  "name": "foundation-sites",
-  "version": "6.3.1",
-  "license": "MIT",
-  "main": [
-    "scss/foundation.scss",
-    "dist/js/foundation.js"
+  "name": "Adhoc Portfolio",
+  "homepage": "https://github.com/developertenzin/adhoc-portfolio",
+  "authors": [
+    "developertenzin <tenzinphuljung7@gmail.com>"
   ],
+  "description": "This is a portfolio built just for Chicago Digital ;)",
+  "main": "app.js",
+  "license": "MIT",
   "ignore": [
-    "config",
-    "docs",
-    "gulp",
-    "lib",
+    "**/.*",
+    "node_modules",
+    "bower_components",
     "test",
-    "composer.json",
-    "CONTRIBUTING.md",
-    "gulpfile.js",
-    "meteor-README.md",
-    "package.js",
-    "package.json",
-    "sache.json",
-    ".editorconfig",
-    ".npm",
-    ".gitignore",
-    ".npmignore",
-    ".versions",
-    ".babelrc",
-    "yarn.lock"
+    "tests"
   ],
   "dependencies": {
-    "jquery": ">= 2.2.0",
-    "what-input": "~4.0.3"
+    "foundation-sites": "^6.3.1",
+    "normalize-css": "^6.0.0",
+    "typed.js": "^1.1.7",
+    "jqcloud2": "^2.0.2",
+    "custombox": "^4.0.1"
   }
 }
