@@ -1,281 +1,71 @@
-<img src="/logo-cropped.png" width="450px" title="Typed.js" />
-========
-
-[View the live demo](http://www.mattboldt.com/demos/typed-js/) | [Go to my site, mattboldt.com](http://www.mattboldt.com)
-
-Typed.js is a library that types. Enter in any string, and watch it type at the speed you've set, backspace what it's typed, and begin a new sentence for however many strings you've set.
-
-Looking for some custom use cases for Typed.js? [Check out the wiki](https://github.com/mattboldt/typed.js/wiki)
-
----
-
-Installation
-------------
-This is really all you need to get going.
-
-~~~ javascript
-<script src="typed.js"></script>
-<script>
-	document.addEventListener("DOMContentLoaded", function(){
-		Typed.new(".element", {
-			strings: ["First sentence.", "Second sentence."],
-			typeSpeed: 0
-		});
-	});
-</script>
-...
+# jQCloud
 
-<span class="element"></span>
-~~~
+[![Bower version](https://badge.fury.io/bo/jqcloud2.svg)](http://badge.fury.io/bo/jqcloud2)
 
-Or you can use jQuery:
+## Beautiful word clouds with jQuery
 
-~~~ javascript
-<script src="jquery.js"></script>
-<script src="typed.js"></script>
-<script>
-	$(function(){
-		$(".element").typed({
-			strings: ["First sentence.", "Second sentence."],
-			typeSpeed: 0
-		});
-	});
-</script>
-...
-
-<span class="element"></span>
-~~~
-
-### Install with Bower
-
-~~~
-bower install typed.js
-~~~
-
-Want the animated blinking cursor? Add this CSS.
-
-~~~ scss
-.typed-cursor{
-	opacity: 1;
-	-webkit-animation: blink 0.7s infinite;
-	-moz-animation: blink 0.7s infinite;
-	animation: blink 0.7s infinite;
-}
-@keyframes blink{
-	0% { opacity:1; }
-	50% { opacity:0; }
-	100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-	0% { opacity:1; }
-	50% { opacity:0; }
-	100% { opacity:1; }
-}
-@-moz-keyframes blink{
-	0% { opacity:1; }
-	50% { opacity:0; }
-	100% { opacity:1; }
-}
-~~~
+jQCloud is a jQuery plugin that builds neat and pure HTML + CSS word clouds and tag clouds that are actually shaped like a cloud (otherwise, why would we call them 'word clouds'?).
 
-CSS when using the `fadeOut` option
+Also available as [AngularJS directive](https://github.com/mistic100/angular-jqcloud)
 
-~~~ scss
-.typed-fade-out{
-    opacity: 0;
-    animation: 0;
-    transition: opacity .25s;
-}
-~~~
+## Documentation
 
-Wonderful sites using Typed.js
----
-https://slack.com/
+http://mistic100.github.io/jQCloud
 
-https://envato.com/
+## Changelog
 
-https://productmap.co/
+2.0.0
+- Migrate to Grunt builder
+- New documentation
+- Big performances improvement (thanks to [saravanan4514](https://github.com/saravanan4514))
+- `delayedDraw` option replaced by `delay`
+- `center` now takes relative float values and not absolute integers
+- add `steps`, `autoResize`, `classPattern`, `colors` and `fontSize` options
 
-https://www.typed.com/
+1.0.5 Added the capability to update dynamically the cloud, as well as an example (thanks to [acjzz](https://github.com/acjzz))
 
-https://git.market/
+1.0.4 Add option to remove overflowing words (thanks to [drewB](https://github.com/drewB))
 
-http://allison.house/404
+1.0.3 Fix bug when providing a context to jQuery
 
-http://www.maxcdn.com/
+1.0.2 Relative font sizes and easier to customize CSS (kudos to [daniel-toman](https://github.com/daniel-toman))
 
-https://commando.io/
+1.0.1 Option to turn off URL encoding for links (thanks to [bboughton](https://github.com/bboughton))
 
-http://testdouble.com/agency.html
+1.0.0 API redesign (warning: this is a major update, and background compatibility is not maintained)
 
-http://www.stephanemartinw.com/
+0.2.10 Fix bug occurring when the container element has no id
 
-http://www.trelab.fi/en/
+0.2.9 Add dataAttributes option (thanks again to [cham](https://github.com/cham)) and fix bug when weights are all equal (thanks to [Grepsy](https://github.com/Grepsy))
 
-http://jessejohnson.github.io/
+0.2.8 Add possibility to specify custom classes for words with the custom_class attribute (thanks to [cham](https://github.com/cham))
 
+0.2.7 Add possibility to draw rectangular-shaped clouds (an idea by [nithin2e](https://github.com/nithin2e))
 
----
+0.2.6 Fix bug with handlers, add nofollow option (thanks to [strobotta](https://github.com/strobotta)) and word callbacks.
 
-### HTML tags
+0.2.5 Add possibility to bind event handlers to words (thanks to [astintzing](https://github.com/astintzing))
 
-By default the content type is set to `html`, so you're good to go. Want to type out the html regularly? Set it to `text`.
-
-~~~ javascript
-Typed.new(".element", {
-	strings: ["Typed.js is an <strong>Awesome</strong> library."],
-	contentType: 'html' // or 'text'
-});
-~~~
-
-### Strings from static HTML (SEO Friendly)
-Rather than using the `strings` array to insert strings, you can place an HTML `div` on the page and read from it.
-This allows bots and search engines, as well as users with JavaScript disabled, to see your text on the page.
-
-~~~ javascript
-<script>
-	document.addEventListener('DOMContentLoaded', function(){
-		Typed.new('#typed', {
-			stringsElement: document.getElementById('typed-strings')
-		});
-	});
-</script>
-~~~
-You must wrap each string in the `typed-strings` div with a `<p>`
-~~~ html
-<div id="typed-strings">
-    <p>Typed.js is an <strong>Awesome</strong> library.</p>
-    <p>It <em>types</em> out sentences.</p>
-</div>
-<span id="typed"></span>
-~~~
-
-### Line Breaks
-
-#### `contentType: 'html'`
-
-~~~ javascript
-Typed.new(".typed", { strings: ["Sentence with <br>line break."] });
-~~~
-
-#### `contentType: 'text'`
-
-Use `white-space: pre` in your typed text element, and then `\n` when typing out the strings. Example:
-
-~~~ html
-
-<span id="typed" style="white-space:pre"></span>
+0.2.4 Option randomClasses can be an array of classes among which a random class is selected for each word
 
-...
+0.2.3 Add option randomClasses, allowing for random CSS styling (inspired by issue about vertical words opened by [tttp](https://github.com/tttp))
 
-Typed.new(".element", { strings: ["Sentence with a\nline break."] });
+0.2.2 CSS improvements (as suggested by [NomikOS](https://github.com/NomikOS))
 
-~~~
+0.2.1 Optimization and performance improvements (making 0.2.1 around 25% faster than 0.2.0)
 
-### Type Pausing
+0.2.0 Add configuration options, passed as the second argument of jQCloud (include ideas proposed by [mindscratch](https://github.com/mindscratch) and [aaaa0441](https://github.com/aaaa0441))
 
-You can pause in the middle of a string for a given amount of time by including an escape character.
+0.1.8 Fix bug in the algorithm causing sometimes unbalanced layouts (thanks to [isamochernov](https://github.com/isamochernov))
 
-~~~ javascript
-Typed.new(".element", {
-	// Waits 1000ms after typing "First"
-	strings: ["First ^1000 sentence.", "Second sentence."]
-});
-~~~
+0.1.7 Remove duplicated `</span>` when word has an URL (thanks to [rbrancher](https://github.com/rbrancher))
 
+0.1.6 JavaScript-friendly URL encode 'url' option; Typecast 'weight' option to float (thanks to [nudesign](https://github.com/nudesign))
 
-Customization
-----
+0.1.5 Apply CSS style to a "jqcloud" class, automatically added (previously an id was used. Again, thanks to [seanahrens](https://github.com/seanahrens))
 
-~~~ javascript
-Typed.new(".element", {
-	strings: ["First sentence.", "Second sentence."],
-	// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
-	stringsElement: null,
-	// typing speed
-	typeSpeed: 0,
-	// time before typing starts
-	startDelay: 0,
-	// backspacing speed
-	backSpeed: 0,
-	// shuffle the strings
-	shuffle: false,
-	// time before backspacing
-	backDelay: 500,
-	// Fade out instead of backspace (must use CSS class)
-	fadeOut: false,
-	fadeOutClass: 'typed-fade-out',
-	fadeOutSpeed: 500, // milliseconds
-	// loop
-	loop: false,
-	// null = infinite
-	loopCount: null,
-	// show cursor
-	showCursor: true,
-	// character for cursor
-	cursorChar: "|",
-	// attribute to type (null == text)
-	attr: null,
-	// either html or text
-	contentType: 'html',
-	// call when done callback function
-	callback: function() {},
-	// starting callback function before each string
-	preStringTyped: function() {},
-	//callback for every typed string
-	onStringTyped: function() {},
-	// callback for reset
-	resetCallback: function() {}
-});
-~~~
+0.1.4 Fix bug with multiple clouds on the same page (kudos to [seanahrens](https://github.com/seanahrens))
 
+0.1.3 Added possibility to pass a callback function and to specify a custom HTML title attribute for each word in the cloud
 
-### Get Super Custom
-
-Want to get really custom? On my site and in the Typed.js demo I have the code type out two words, and then backspace only those two, then continue where it left off. This is done in an `if` statement in the `backspace()` function. Here's what it looks like.
-
-~~~ javascript
-...
-, backspace: function(curString, curStrPos){
-	...
-
-	setTimeout(function() {
-
-			// check string array position
-			// on the first string, only delete one word
-			// the stopNum actually represents the amount of chars to
-			// keep in the current string. In my case it's 3.
-			if (self.arrayPos == 1){
-				self.stopNum = 3;
-			}
-			//every other time, delete the whole typed string
-			else{
-				self.stopNum = 0;
-			}
-...
-~~~
-
-This checks if the `arrayPos` is `1`, which would be the second string you entered. If so, it sets `stopNum` to `3` instead of `0`, which tells it to stop when there are 3 characters left. For now you'll have to create custom `if` statements for each specific case you want. I may automate this somehow in the future.
-
-
-## Development
-
-`npm install`
-
-Then, once you've made your edits:
-
-`gulp`
-
-This will create a minified version in `/dist`
-
-
-end
----
-
-Thanks for checking this out. If you have any questions, I'll be on [Twitter](http://www.twitter.com/atmattb).
-
-If you're using this, let me know! I'd love to see it.
-
-It would also be great if you mentioned me or my website somewhere. [www.mattboldt.com](http://www.mattboldt.com)
-
-
+0.1.0 -> 0.1.2 I just started this tiny project, only minor improvements and optimization happened

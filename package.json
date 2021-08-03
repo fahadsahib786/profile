@@ -1,19 +1,46 @@
 {
-  "name": "typed.js",
-  "version": "1.1.6",
-  "homepage": "https://github.com/mattboldt/typed.js",
-  "authors": [
-    "Matt Boldt <me@mattboldt.com>"
-  ],
-  "description": "A jQuery typing animation script",
-  "main": "dist/typed.min.js",
-  "keywords": [
-    "typed",
-    "animation"
-  ],
+  "name": "jqcloud2",
+  "version": "2.0.2",
+  "homepage": "https://github.com/mistic100/jQCloud",
+  "description": "jQuery plugin for drawing neat word clouds that actually look like clouds",
+  "author": [{
+    "name": "Luca Ongaro",
+    "homepage": "http://www.lucaongaro.eu"
+  }, {
+    "name": "Daniel White",
+    "homepage": "http://www.developerdan.com"
+  }, {
+    "name": "Damien \"Mistic\" Sorel",
+    "homepage": "http://www.strangeplanet.fr"
+  }],
+  "main": "dist/jqcloud.js",
+  "dependencies" : {
+    "jquery": ">= 1.9.0"
+  },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-uglify": "^1.1.0"
+    "qunitjs": "~1.14.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-qunit": "~0.5.1",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-jshint": "~0.10.0"
+  },
+  "keywords": [
+    "cloud",
+    "jquery",
+    "keyword",
+    "tag"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mistic100/jQCloud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mistic100/jQCloud/issues"
+  },
+  "scripts": {
+    "test": "grunt test"
   }
 }
