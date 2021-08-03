@@ -1,16 +1,42 @@
 {
-  "name": "typed.js",
-  "version": "1.1.6",
-  "homepage": "https://github.com/mattboldt/typed.js",
-  "authors": [
-    "Matt Boldt <me@mattboldt.com>"
+  "name": "custombox",
+  "description": "Modal dialog effects with transitions CSS3",
+  "version": "4.0.1",
+  "author": {
+    "name": "Julio de la Calle",
+    "email": "juliodlcp@gmail.com",
+    "url": "https://www.linkedin.com/in/juliodelacalle"
+  },
+  "homepage": "https://dixso.github.io/custombox/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "LICENSE.txt",
+    "README.md",
+    "Gruntfile.js",
+    "component.json",
+    "package.json"
   ],
-  "description": "A jQuery typing animation script",
-  "main": "dist/typed.min.js",
   "keywords": [
-    "typed",
-    "animation"
+    "animations",
+    "css3",
+    "dialog",
+    "flexbox",
+    "lightbox",
+    "modal",
+    "popup",
+    "responsive",
+    "window"
   ],
-  "ignore": [],
-  "license": "MIT"
+  "license": "MIT",
+  "main": [
+    "dist/custombox.min.css",
+    "dist/custombox.min.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://dixso@github.com/dixso/custombox.git"
+  }
 }
